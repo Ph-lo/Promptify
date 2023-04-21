@@ -1,3 +1,3 @@
-# Codex
+# Promptify
 
-Make quick requests to the codex model from OpenAI
+Make quick requests to OpenAI models GPT and DALL-E
