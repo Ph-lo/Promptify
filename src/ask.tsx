@@ -163,7 +163,7 @@ const DALLEForm = ({ state, setState }: { state: ModelFormParams; setState: (s: 
     <Fragment>
       <Form.TextField
         id="n"
-        title="N"
+        title="Number of images"
         placeholder="1"
         info="The number of images to generate. Must be between 1 and 10."
         value={String(state?.n)}

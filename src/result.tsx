@@ -10,12 +10,14 @@ import {
   LocalStorage,
   Toast,
   showToast,
+  useNavigation,
 } from "@raycast/api";
 import { ModelFormParams, ResultType } from "./types";
 import { Fragment, useEffect, useState } from "react";
 import { MODELS, fetchImageFromURL, sendPrompt } from "./utils";
 
 export default function DisplayResult({ request }: { request: ModelFormParams }) {
+  const { pop } = useNavigation();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [result, setResult] = useState<ResultType>();
   useEffect(() => {
@@ -24,12 +26,16 @@ export default function DisplayResult({ request }: { request: ModelFormParams })
       .then((res) => {
         showToast(Toast.Style.Success, "Generation completed");
         setResult(res as ResultType);
+        if (res?.error) {
+          throw new Error(`${res?.error?.message}`);
+        }
         setIsLoading(false);
       })
       .catch((error) => {
-        showToast(Toast.Style.Failure, "Something went wrong");
+        showToast(Toast.Style.Failure, `${error}`);
         console.log(error);
         setIsLoading(false);
+        pop();
       });
   }, []);
   return (

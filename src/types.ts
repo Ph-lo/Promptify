@@ -66,6 +66,12 @@ export type ResponseType = {
       url: string;
     }
   ];
+  error?: {
+    message: string;
+    type: string;
+    param: string | number | null | undefined;
+    code: string;
+  };
 };
 
 export type ResultType = {

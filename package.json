@@ -7,13 +7,15 @@
   "author": "phlo",
   "categories": [
     "Productivity",
-    "Developer Tools"
+    "Developer Tools",
+    "Data",
+    "Media"
   ],
   "license": "MIT",
   "commands": [
     {
       "name": "ask",
-      "title": "Ask",
+      "title": "Ask OpenAI",
       "description": "Query chosen OpenAI model",
       "mode": "view"
     },
