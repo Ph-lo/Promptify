@@ -1,10 +1,8 @@
 import { ActionPanel, Form, Action, showToast, Toast, useNavigation, Icon } from "@raycast/api";
 import { Fragment, useEffect, useState } from "react";
-import { CustomPrompt, CustomPrompts, ModelFormParams, ResultType } from "./types";
-import { MODELS, fetchStorage, getRequestBody, getStorageCount, sendPrompt, setStorage } from "./utils";
+import { CustomPrompts, ModelFormParams } from "./types";
+import { fetchStorage, getStorageCount, setStorage } from "./utils";
 import { parseNbr } from "./utils";
-import { accessToken } from "./preferences";
-import { useFetch } from "@raycast/utils";
 import DisplayResult from "./result";
 import CreatePrompt from "./create-prompt";
 import CustomPromptsView from "./custom-prompts";
@@ -98,7 +96,7 @@ const GPTForm = ({ state, setState }: { state: ModelFormParams; setState: (s: Mo
       })
       .catch((err) => {
         console.log(err);
-        showToast(Toast.Style.Failure, "Couldn't fetch storage");
+        // showToast(Toast.Style.Failure, "Couldn't fetch storage");
       });
   }, []);
   return (
