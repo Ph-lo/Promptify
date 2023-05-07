@@ -18,8 +18,8 @@ import os from "os";
 export const MODELS: Models = {
   gpt: {
     link: "https://api.openai.com/v1/chat/completions",
-    model: "gpt-3.5-turbo",
-    name: "GPT-3",
+    model: "gpt-4",
+    name: "GPT-4",
   },
   dalle: {
     link: "https://api.openai.com/v1/images/generations",

@@ -73,7 +73,7 @@ export default function AskView() {
         defaultValue="gpt"
         onChange={(e) => setFormValues({ ...formValues, model: e })}
       >
-        <Form.Dropdown.Item value="gpt" title="GPT-3" />
+        <Form.Dropdown.Item value="gpt" title="GPT-4" />
         <Form.Dropdown.Item value="dalle" title="DALL-E" />
       </Form.Dropdown>
       <Form.Separator />
